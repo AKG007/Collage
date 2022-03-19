@@ -51,6 +51,7 @@ int check_amstrong(int num)
 
 void print_2darr(int arr[3][3])
 {
+    printf("\n\n");
     for (int r = 0; r < 3; r++)
     {
         for (int c = 0; c < 3; c++)
@@ -59,6 +60,7 @@ void print_2darr(int arr[3][3])
         }
         printf("\n");
     }
+    printf("\n\n");
 }
 
 void main()
@@ -105,18 +107,31 @@ void main()
     int check = check_amstrong(num);
     if (check == 1)
     {
-        printf("Entered no %d is an amstrong no",num);
+        printf("Entered no %d is an amstrong no", num);
     }
     else
     {
-        printf("Entered no %d is not an amstrong no",num);
+        printf("Entered no %d is not an amstrong no", num);
     }
     printf("\nmirror numbers in the array...\n\n");
-    tda[0][0]= num;
+    tda[0][0] = num;
     print_2darr(tda);
 
     // 6 to print the grand sum of digits of the numbers in a given array
-    printf("\nGrand sum of digits of the numbers in a given array is %d",sum_of_all(tda));
+    printf("\nGrand sum of digits of the numbers in a given array is %d", sum_of_all(tda));
 
-    //7 to rotate the elements of the array to right or to left!
+    // 7 to rotate the elements of the array to right or to left!
+    int temp;
+    printf("rotate the elements of the array to right or to left!\nOrignal");
+    print_2darr(tda);
+    printf("After Rotate\n\n");
+    for (int r = 2; r >=0; r--)
+    {
+        for (int c = 0; c <3; c++)
+        {
+            printf(" %d ",tda[c][r]);
+        }
+        printf("\n");
+    }
+    // print_2darr(tda);
 }
