@@ -1,4 +1,1 @@
-    else
-    {
-        return 0;
-    }
+    getchar();

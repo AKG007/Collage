@@ -3,10 +3,10 @@
 
 int sum_of_selected_no(int arr[3][3]) // 1 to sum up the selected members of the 2 Dimensional Array (TDA)
 {
-    int total = 0;
-    for (int r = 0; r < 3; r++)
+    int total = 0, r, c;
+    for (r = 0; r < 3; r++)
     {
-        for (int c = 0; c < 3; c++)
+        for (c = 0; c < 3; c++)
         {
             if (arr[r][c] % 2 == 0)
             {
@@ -19,10 +19,10 @@ int sum_of_selected_no(int arr[3][3]) // 1 to sum up the selected members of the
 
 int sum_of_all(int arr[3][3]) // 4 given an array to print the sum of digits of each number in the array
 {
-    int total = 0;
-    for (int r = 0; r < 3; r++)
+    int total = 0, r, c;
+    for (r = 0; r < 3; r++)
     {
-        for (int c = 0; c < 3; c++)
+        for (c = 0; c < 3; c++)
         {
             total = total + arr[r][c];
         }
@@ -52,10 +52,11 @@ int check_amstrong(int num)
 
 void print_2darr(int arr[3][3])
 {
+    int r, c;
     printf("\n\n");
-    for (int r = 0; r < 3; r++)
+    for (r = 0; r < 3; r++)
     {
-        for (int c = 0; c < 3; c++)
+        for (c = 0; c < 3; c++)
         {
             printf(" %d ", arr[r][c]);
         }
@@ -67,26 +68,24 @@ void print_2darr(int arr[3][3])
 void main()
 {
     int tda[3][3] = {10, 11, 12, 13, 14, 15, 16, 17, 18};
+    int br = 0, bc = 0, sr = 0, sc = 0, big = tda[0][0], small = tda[0][0], r, c, i, num, check;
+    int puzzle[4][4] = {1, 3, 2, 15, 6, 5, 8, 16, 7, 9, 11, 10, 4, 12, 14, 13}, temp;
+    clrscr();
     // 1 to sum up the selected members of the 2 Dimensional Array (TDA)
     printf("Made an array 3x3");
     print_2darr(tda);
-    printf("\n\nQ1 To sum up the selected members of the 2 Dimensional Array (TDA) \"press enter to get the answer\" ");
-    getchar();
+    printf("\n\nQ1 To sum up the selected members of the 2 Dimensional Array (TDA)");
     printf("\n\t=>Sum of selected no of array which are divisble by 2 is %d\n\n\"Press enter to go next question\"", sum_of_selected_no(tda));
-    getchar();
+    getch();
     clrscr();
-
-
-
 
     // 3 to swap the smallest and biggest elems in a tda and to swap them
     printf("Q3 To swap the smallest and biggest elems in a tda and to swap them	\n");
-    int br = 0, bc = 0, sr = 0, sc = 0, big = tda[0][0], small = tda[0][0];
     printf("Orignal 2d array\n");
     print_2darr(tda);
-    for (int r = 0; r < 3; r++)
+    for (r = 0; r < 3; r++)
     {
-        for (int c = 0; c < 3; c++)
+        for (c = 0; c < 3; c++)
         {
             if (tda[r][c] > big)
             {
@@ -107,32 +106,22 @@ void main()
     printf("\nArray after swap\n");
     print_2darr(tda);
     printf("\"Press enter to go next question\"");
-    getchar();
+    getch();
     clrscr();
-
-
-
 
     // 4 given an array to print the sum of digits of each number in the array
     printf("Q4 Given an array to print the sum of digits of each number in the array");
     printf("\n\n\t=>Sum of all the memebers of 2d array is %d\n\n", sum_of_all(tda));
     printf("\"Press enter to go next question\"");
-    getchar();
+    getch();
+
     clrscr();
 
-
-
-
-
-
-
-
     // 5 check the armstrong numbers, mirror numbers in the array
-    int num;
     printf("Q5 Check the armstrong numbers, mirror numbers in the array\n\n");
     printf("Enter the numbers to check is it amstrong no or not:\nnum: ");
     scanf("%d", &num);
-    int check = check_amstrong(num);
+    check = check_amstrong(num);
     if (check == 1)
     {
         printf("Entered no %d is an amstrong no", num);
@@ -145,47 +134,57 @@ void main()
     tda[0][0] = num;
     print_2darr(tda);
     printf("\"Press enter to go next question\"");
-    getchar();
+    getch();
     clrscr();
 
     // 6 to print the grand sum of digits of the numbers in a given array
+    printf("Q6 To print the grand sum of digits of the numbers in a given array\n");
     printf("\nGrand sum of digits of the numbers in a given array is %d", sum_of_all(tda));
+    printf("\n\n\"Press enter to go next question\"");
+    getch();
+    clrscr();
 
     // 7 to rotate the elements of the array to right or to left!
+    printf("Q7 to rotate the elements of the array to right or to left!\n\n");
     printf("rotate the elements of the array to right or to left!\nOrignal");
     print_2darr(tda);
     printf("After Rotate\n\n");
-    for (int r = 2; r >= 0; r--)
+    for (r = 2; r >= 0; r--)
     {
-        for (int c = 0; c < 3; c++)
+        for (c = 0; c < 3; c++)
         {
             printf(" %d ", tda[c][r]);
         }
         printf("\n");
     }
+    printf("\n\"Press enter to go next question\"");
+    getch();
+    clrscr();
 
-    
-        // 8 to swap 2 specified  rows of the tda
-        printf("8. swap 2 specified  rows of the tda\nOrginal");
+    // 8 to swap 2 specified  rows of the tda
+    printf("Q8 To swap 2 specified  rows of the tda\n\n");
+    printf("swap 2 specified  rows of the tda\n\nOrginal");
     print_2darr(tda);
     printf("After Swap\n");
-    for (int r = 0; r < 3; r++)
+    for (r = 0; r < 3; r++)
     {
-        for (int c = 0; c < 3; c++)
+        for (c = 0; c < 3; c++)
         {
             printf(" %d ", tda[2 - r][c]);
         }
         printf("\n");
     }
+    printf("\n\"Press enter to go next question\"");
+    getch();
+    clrscr();
 
     //    9 to implement the 15 puzzle
-    int puzzle[4][4] = {1, 3, 2, 15, 6, 5, 8, 16, 7, 9, 11, 10, 4, 12, 14, 13}, temp;
-    printf("9. Implement the 15 puzzle");
-    printf("\n\n");
-
-    for (int r = 0; r < 4; r++)
+    printf("Q9. To implement the 15 puzzle");
+    printf("\n");
+    printf("Make an puzzle array\n\n");
+    for (r = 0; r < 4; r++)
     {
-        for (int c = 0; c < 4; c++)
+        for (c = 0; c < 4; c++)
         {
             if (puzzle[r][c] == 16)
                 printf("%2d", 0);
@@ -196,11 +195,11 @@ void main()
     }
     printf("\n\n");
 
-    for (int i = 0; i < 17; i++)
+    for (i = 0; i < 17; i++)
     {
-        for (int r = 0; r < 4; r++)
+        for (r = 0; r < 4; r++)
         {
-            for (int c = 0; c < 4; c++)
+            for (c = 0; c < 4; c++)
             {
                 if (c != 3)
                 {
@@ -233,10 +232,10 @@ void main()
             }
         }
     }
-
-    for (int r = 0; r < 4; r++)
+    printf("After sorting the puzzle\n\n");
+    for (r = 0; r < 4; r++)
     {
-        for (int c = 0; c < 4; c++)
+        for (c = 0; c < 4; c++)
         {
             if (puzzle[r][c] == 16)
                 printf("%2d", 0);
@@ -246,11 +245,15 @@ void main()
         printf("\n");
     }
     printf("\n\n");
+    printf("\"Press enter to go next question\"");
+    getch();
+    clrscr();
 
     //  10 reflect a matrix on bottom line and  left edge separately
-    for (int r = 0; r < 3; r++)
+    printf("Q10 Reflect a matrix on bottom line and  left edge separately\n\n");
+    for (r = 0; r < 3; r++)
     {
-        for (int c = 0; c < 3; c++)
+        for (c = 0; c < 3; c++)
         {
             if (c == 0 || r == 2)
                 printf(" %2d ", tda[r][c]);
@@ -259,20 +262,26 @@ void main()
         }
         printf("\n");
     }
+    printf("\n\"Press enter to go next question\"");
+    getch();
+    clrscr();
 
-    //  10 program to print the row number of the biggest elem in each row
-
-    printf("Biggest no in each row");
-    for (int r = 0; r < 3; r++)
+    //  11 program to print the row number of the biggest elem in each row
+    printf("Q11 Program to print the row number of the biggest elem in each row\n\n");
+    printf("Biggest no in each row\n\n");
+    for (r = 0; r < 3; r++)
     {
         big = tda[r][0];
-        for (int c = 0; c < 3; c++)
+        for (c = 0; c < 3; c++)
         {
             if (tda[r][c] > big)
             {
                 big = tda[r][c];
             }
         }
-        printf("\nIn first row %2d", big);
+        printf("\nIn %d-row row %2d", r + 1, big);
     }
+    printf("\n\"Press enter to exit\"");
+    getch();
+    clrscr();
 }
