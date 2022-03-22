@@ -1,1 +1,1 @@
-    getchar();
+c
