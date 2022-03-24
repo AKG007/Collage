@@ -78,7 +78,7 @@ void main()
 {
 
     int tda[3][3] = {10, 11, 12, 13, 14, 15, 16, 17, 18}, r, c;
-    /*
+    
     // 1 to sum up the selected members of the 2 Dimensional Array (TDA)
     printf("Made an array 3x3");
     print_2darr(tda);
@@ -407,7 +407,7 @@ void main()
         printf("\n");
     }
     getch();
-    */
+    
 
     // --------------------------------------------------------------------------------------------------------
 
