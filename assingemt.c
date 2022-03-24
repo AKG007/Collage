@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<conio.h>
+#include <conio.h>
 
 int sum_of_selected_no(int arr[3][3]) // 1 to sum up the selected members of the 2 Dimensional Array (TDA)
 {
@@ -77,7 +77,8 @@ void main()
 
 {
 
-    int tda[3][3] = {10, 11, 12, 13, 14, 15, 16, 17, 18},r,c;
+    int tda[3][3] = {10, 11, 12, 13, 14, 15, 16, 17, 18}, r, c;
+    /*
     // 1 to sum up the selected members of the 2 Dimensional Array (TDA)
     printf("Made an array 3x3");
     print_2darr(tda);
@@ -120,7 +121,7 @@ void main()
     // -------------------------------------------------------------------------------------
 
     //  4 given an array to print the sum of digits of each number in the array
-    int sum = 0, arr[5] = {10, 11, 12, 13, 14}, num,i;
+    int sum = 0, arr[5] = {10, 11, 12, 13, 14}, num, i;
     printf("Q4 Given an array to print the sum of digits of each number in the array\n\n");
     for (r = 0; r < 5; r++)
     {
@@ -150,12 +151,12 @@ void main()
     int check_amstrong_no, check_mirror_no;
     int arr_[3] = {121, 234, 153};
     printf("Q5 Check the armstrong numbers, mirror numbers in the array\n\nArray");
-    for ( r = 0; r < 3; r++)
+    for (r = 0; r < 3; r++)
     {
-        printf(" %3d ",arr_[r]);
+        printf(" %3d ", arr_[r]);
     }
     printf("\n");
-    
+
     for (r = 0; r < 3; r++)
     {
         check_amstrong_no = check_amstrong(arr_[r]);
@@ -195,6 +196,7 @@ void main()
         }
         printf("\n");
     }
+    rintf("\n\"Press enter to go next question\"");
     getch();
     // -----------------------------------------------------------------------------------------------------
 
@@ -209,6 +211,7 @@ void main()
         }
         printf("\n");
     }
+    rintf("\n\"Press enter to go next question\"");
     getch();
 
     // ---------------------------------------------------------------------------------------------
@@ -227,9 +230,37 @@ void main()
         }
         printf("\nIn first row %2d", big);
     }
+    rintf("\n\"Press enter to go next question\"");
     getch();
 
     // -----------------------------------------------------------------------------------------------------
+
+    // 12 to draw sudokku board
+    int l, m;
+    num = 1;
+    printf("\n\nQ12 to draw sudokku board\n\n");
+    for (r = 1; r < 10; r++)
+    {
+        if ((r - 1) % 3 == 0)
+        {
+            printf("--------------------------------------\n");
+        }
+        for (c = 1; c < 10; c++)
+        {
+
+            if ((c - 1) % 3 == 0)
+            {
+                printf(" |  %2d ", c);
+            }
+            else
+                printf("%2d ", c);
+        }
+        printf("\n");
+    }
+    rintf("\n\"Press enter to go next question\"");
+    getch();
+
+    // --------------------------------------------------------------------------------------------------
 
     // 13 given a tda (2 dimensional Array), wap to print the rowsums, colsums separately and to give the grand sum
     int rsum = 0, csum = 0, tda_[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -267,7 +298,7 @@ void main()
 
     printf("\n\n\" 15 to print the following shapes off/from a 9x9square matrix.\nPlus sign, tick mark hockey stick, spoon, inverted U, inverted C of desirable proportions\"\nArray of 9x9\n\n");
 
-    for (r = 0; r < 9; r++);
+    for (r = 0; r < 9; r++)
     {
         for (c = 0; c < 9; c++)
         {
@@ -376,5 +407,94 @@ void main()
         printf("\n");
     }
     getch();
+    */
+
     // --------------------------------------------------------------------------------------------------------
+
+    int marks[10][6], num = 10, total, high, low, pass = 0;
+    // 16. given the marks of 10 students in 6 subjects, find					5
+    // a. the sum of marks of each student avg mark as integer, highest mark, lowest mark
+    // b. class average in each subject as integer, highest and lowest class avg
+    // c. number of pass in each subject
+    printf("Q16. given the marks of 10 students in 6 subjects, find\na. the sum of marks of each student avg mark as integer, highest mark, lowest mark\nb. class average in each subject as integer, highest and lowest class avg\nc. number of pass in each subjec\n\nrows show the no of student cols show the no of subjects\n\n");
+
+
+    for (r = 0; r < 10; r++)
+    {
+        for (c = 0; c < 6; c++)
+        {
+            if (num == 50)
+            {
+                num = 10;
+                marks[r][c] = num;
+            }
+            else
+                marks[r][c] = num;
+            num++;
+        }
+    }
+        for (r = 0; r < 10; r++)
+    {
+        pass = 0;
+        for (c = 0; c < 6; c++)
+        {
+            printf("%2d ", marks[r][c]);
+        }
+        printf("\n");
+    }
+
+    for (r = 0; r < 10; r++)
+    {
+        total = 0;
+        high = marks[r][0];
+        low = marks[r][0];
+        for (c = 0; c < 6; c++)
+        {
+
+            if (marks[r][c] > high)
+            {
+                high = marks[r][c];
+            }
+            if (marks[r][c] < low)
+            {
+                low = marks[r][c];
+            }
+            total = total + marks[r][c];
+        }
+        printf("\nTotal Marks of %d-student is %d", r + 1, total);
+        printf("\nAvg Marks of %d-student is %d", r + 1, total / 6);
+        printf("\nHighest Marks of %d-student is %d", r + 1, high);
+        printf("\nLowest Marks of %d-student is %d\n\n", r + 1, low);
+    }
+    for (r = 0; r < 10; r++)
+    {
+        total = 0;
+        high = marks[0][r];
+        low = marks[0][r];
+        for (c = 0; c < 6; c++)
+        {
+            total = total + marks[c][r];
+            if (marks[c][r] > high)
+            {
+                high = marks[c][r];
+            }
+            if (marks[c][r] < low)
+            {
+                low = marks[c][r];
+            }
+        }
+        printf("\nAvg Marks of students in %d-Subject is %d", r + 1, total / 10);
+        printf("\nHighest Marks of students in %d-Subject is %d", r + 1, high);
+        printf("\nLowest Marks of students in %d-Subject is %d\n\n", r + 1, low);
+    }
+    for (r = 0; r < 10; r++)
+    {
+        pass = 0;
+        for (c = 0; c < 6; c++)
+        {
+            if (marks[c][r] > 18)
+                pass++;
+        }
+        printf("Total Student pass in Subject-%d is %d\n\n", r + 1, pass);
+    }
 }
